@@ -1,0 +1,80 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+
+  // TypeScript configuration optimized for Node.js backend development
+  // with proper module resolution and interoperability settings
+
+  "compilerOptions": {
+    // Source code directory - all TypeScript files are relative to this path
+    "rootDir": "./src",
+    // Compiled JavaScript output directory for production builds
+    "outDir": "./dist",
+
+    // Module system configuration using CommonJS format for Node.js compatibility
+    // CommonJS allows clean import syntax without file extensions
+    "module": "CommonJS",
+
+    // Node.js module resolution strategy for both npm packages and local files
+    "moduleResolution": "Node",
+
+    // Target modern ECMAScript features while maintaining CommonJS module format
+    "target": "ESNext",
+
+    // Include Node.js type definitions for built-in modules and APIs
+    "types": ["node"],
+
+    // Modern JavaScript feature support library
+    "lib": ["ESNext"],
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Strict type checking enabled for enhanced code quality and safety
+    "strict": true,
+    "strictNullChecks": true,
+
+    // JSX support (primarily for potential React components in shared code)
+    "jsx": "react-jsx",
+
+    // Modern module syntax handling and isolation
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+
+    // Skip library type checking for improved compilation performance
+    "skipLibCheck": true,
+
+    // Disable TypeScript file extension imports to maintain standard import patterns
+    "allowImportingTsExtensions": false,
+
+    // Enable JavaScript output generation for production deployment
+    "noEmit": false,
+
+    // Enable interoperability between CommonJS and ES modules
+    // Allows clean default imports for CommonJS packages: import express from 'express'
+    "esModuleInterop": true,
+
+    // Support default imports for packages that use module.exports syntax
+    "allowSyntheticDefaultImports": true
+  },
+  // Include all TypeScript files in the src directory for compilation
+  "include": ["src/**/*"],
+
+  // Exclude node_modules and build output to prevent duplicate processing
+  "exclude": ["node_modules", "dist"]
+}
